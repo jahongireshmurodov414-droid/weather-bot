@@ -1,4 +1,4 @@
-import requests
+import httpx
 from datetime import datetime
 from config import OPENWEATHER_KEY
 
@@ -21,10 +21,15 @@ def time_emoji(hour):
     if 18 <= hour < 22: return "🌆"
     return "🌙"
 
-def get_weather(city: str) -> str:
+async def get_weather(city: str, client: httpx.AsyncClient = None) -> str:
     params = {"q": city, "appid": OPENWEATHER_KEY, "units": "metric", "lang": "ru"}
     try:
-        r = requests.get(f"{BASE_URL}/weather", params=params, timeout=10)
+        if client:
+            r = await client.get(f"{BASE_URL}/weather", params=params, timeout=10.0)
+        else:
+            async with httpx.AsyncClient() as c:
+                r = await c.get(f"{BASE_URL}/weather", params=params, timeout=10.0)
+
         if r.status_code == 404:
             return f"❌ Город *{city}* не найден. Проверь название."
         if r.status_code != 200:
@@ -34,20 +39,30 @@ def get_weather(city: str) -> str:
     except Exception as e:
         return f"❌ Ошибка: {e}"
 
-def get_weather_by_coords(lat: float, lon: float) -> str:
+async def get_weather_by_coords(lat: float, lon: float, client: httpx.AsyncClient = None) -> str:
     params = {"lat": lat, "lon": lon, "appid": OPENWEATHER_KEY, "units": "metric", "lang": "ru"}
     try:
-        r = requests.get(f"{BASE_URL}/weather", params=params, timeout=10)
+        if client:
+            r = await client.get(f"{BASE_URL}/weather", params=params, timeout=10.0)
+        else:
+            async with httpx.AsyncClient() as c:
+                r = await c.get(f"{BASE_URL}/weather", params=params, timeout=10.0)
+
         if r.status_code != 200:
             return "⚠️ Не удалось получить погоду по геолокации."
         return _format_current(r.json())
     except Exception as e:
         return f"❌ Ошибка: {e}"
 
-def get_forecast(city: str) -> str:
+async def get_forecast(city: str, client: httpx.AsyncClient = None) -> str:
     params = {"q": city, "appid": OPENWEATHER_KEY, "units": "metric", "lang": "ru", "cnt": 40}
     try:
-        r = requests.get(f"{BASE_URL}/forecast", params=params, timeout=10)
+        if client:
+            r = await client.get(f"{BASE_URL}/forecast", params=params, timeout=10.0)
+        else:
+            async with httpx.AsyncClient() as c:
+                r = await c.get(f"{BASE_URL}/forecast", params=params, timeout=10.0)
+
         if r.status_code == 404:
             return f"❌ Город *{city}* не найден."
         if r.status_code != 200:
