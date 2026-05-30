@@ -1,7 +1,7 @@
-import requests
+import httpx
 from datetime import datetime
 
-def get_today_facts() -> str:
+async def get_today_facts(client: httpx.AsyncClient = None) -> str:
     now = datetime.now()
     month = now.month
     day = now.day
@@ -9,11 +9,18 @@ def get_today_facts() -> str:
 
     lines = [f"📆 *Сегодня {date_str}*\n{'─' * 22}"]
 
+    if client:
+        return await _fetch_facts(lines, now, month, day, client)
+    else:
+        async with httpx.AsyncClient() as c:
+            return await _fetch_facts(lines, now, month, day, c)
+
+async def _fetch_facts(lines, now, month, day, client: httpx.AsyncClient) -> str:
     # ── 1. Праздники (Nager.Date) ──────────────────────
     try:
-        r = requests.get(
+        r = await client.get(
             f"https://date.nager.at/api/v3/PublicHolidays/{now.year}/RU",
-            timeout=8
+            timeout=8.0
         )
         if r.status_code == 200:
             holidays = [h for h in r.json() if h["date"][5:] == now.strftime("%m-%d")]
@@ -30,9 +37,9 @@ def get_today_facts() -> str:
 
     # ── 2. События в истории (Wikipedia) ──────────────
     try:
-        r = requests.get(
+        r = await client.get(
             f"https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/{month}/{day}",
-            timeout=8
+            timeout=8.0
         )
         if r.status_code == 200:
             events = r.json().get("events", [])[:3]
@@ -51,9 +58,9 @@ def get_today_facts() -> str:
 
     # ── 3. Интересный факт (Numbers API) ──────────────
     try:
-        r = requests.get(
+        r = await client.get(
             f"http://numbersapi.com/{month}/{day}/date",
-            timeout=8
+            timeout=8.0
         )
         if r.status_code == 200:
             lines.append(f"🔬 *Интересный факт:*\n• {r.text}")

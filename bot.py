@@ -1,5 +1,4 @@
 import logging
-import os
 import asyncio
 from datetime import datetime, timedelta
 
@@ -10,6 +9,7 @@ from telegram.ext import (
 )
 from telegram.constants import ParseMode
 
+from config import TELEGRAM_TOKEN
 from database import (
     init_db, save_user, get_user, set_subscription, get_subscribers,
     add_note, get_notes, delete_note, add_reminder,
@@ -20,9 +20,6 @@ from facts import get_today_facts
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "")
-OPENWEATHER_KEY = os.environ.get("OPENWEATHER_KEY", "")
 
 # ─── KEYBOARDS ───────────────────────────────────────
 
@@ -74,7 +71,8 @@ async def weather_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if context.args:
         city = " ".join(context.args)
         await save_user(update.effective_user.id, city)
-        await update.message.reply_text(get_weather(city), parse_mode=ParseMode.MARKDOWN)
+        res = await get_weather(city)
+        await update.message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
     else:
         context.user_data["action"] = "weather"
         await update.message.reply_text("🏙 Напиши название города:")
@@ -82,21 +80,23 @@ async def weather_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def forecast_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if context.args:
         city = " ".join(context.args)
-        await update.message.reply_text(get_forecast(city), parse_mode=ParseMode.MARKDOWN)
+        res = await get_forecast(city)
+        await update.message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
     else:
         context.user_data["action"] = "forecast"
         await update.message.reply_text("🏙 Напиши название города для прогноза:")
 
 async def handle_location(update: Update, context: ContextTypes.DEFAULT_TYPE):
     loc = update.message.location
-    result = get_weather_by_coords(loc.latitude, loc.longitude)
+    result = await get_weather_by_coords(loc.latitude, loc.longitude)
     await update.message.reply_text(result, parse_mode=ParseMode.MARKDOWN, reply_markup=main_keyboard())
 
 # ─── FACTS ───────────────────────────────────────────
 
 async def today_facts(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("⏳ Загружаю факты дня...")
-    await update.message.reply_text(get_today_facts(), parse_mode=ParseMode.MARKDOWN)
+    res = await get_today_facts()
+    await update.message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
 
 # ─── NOTES ───────────────────────────────────────────
 
@@ -217,10 +217,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if action == "weather":
         context.user_data.pop("action", None)
         await save_user(update.effective_user.id, text)
-        await update.message.reply_text(get_weather(text), parse_mode=ParseMode.MARKDOWN)
+        res = await get_weather(text)
+        await update.message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
     elif action == "forecast":
         context.user_data.pop("action", None)
-        await update.message.reply_text(get_forecast(text), parse_mode=ParseMode.MARKDOWN)
+        res = await get_forecast(text)
+        await update.message.reply_text(res, parse_mode=ParseMode.MARKDOWN)
     elif action == "delete_note":
         context.user_data.pop("action", None)
         try:
@@ -271,10 +273,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def morning_broadcast(context: ContextTypes.DEFAULT_TYPE):
     subscribers = await get_subscribers()
-    facts = get_today_facts()
+    facts = await get_today_facts()
     for user_id, city in subscribers:
         try:
-            weather = get_weather(city) if city else "🏙 Установи город в настройках"
+            weather = await get_weather(city) if city else "🏙 Установи город в настройках"
             msg = f"🌅 *Доброе утро!*\n\n{weather}\n\n{'─'*22}\n\n{facts}"
             await context.bot.send_message(user_id, msg, parse_mode=ParseMode.MARKDOWN)
         except Exception as e:
