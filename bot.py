@@ -293,11 +293,16 @@ async def check_reminders(context: ContextTypes.DEFAULT_TYPE):
 
 # ─── MAIN ─────────────────────────────────────────────
 
-async def main():
+async def post_init(application: Application):
     await init_db()
     logger.info("Database initialized")
 
-    app = Application.builder().token(TELEGRAM_TOKEN).build()
+def main():
+    if not TELEGRAM_TOKEN:
+        logger.error("TELEGRAM_TOKEN is missing. Please set it in .env file.")
+        return
+
+    app = Application.builder().token(TELEGRAM_TOKEN).post_init(post_init).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("weather", weather_cmd))
@@ -317,8 +322,8 @@ async def main():
     job_queue.run_daily(morning_broadcast, time=datetime.strptime("09:00", "%H:%M").time())
     job_queue.run_repeating(check_reminders, interval=60)
 
-    logger.info("Bot is running...")
-    await app.run_polling()
+    logger.info("Bot is starting...")
+    app.run_polling()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

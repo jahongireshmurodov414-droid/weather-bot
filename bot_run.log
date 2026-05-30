@@ -1,0 +1,7 @@
+WARNING:dotenv.main:Python-dotenv could not parse statement starting at line 2
+WARNING:dotenv.main:Python-dotenv could not parse statement starting at line 4
+WARNING:dotenv.main:Python-dotenv could not parse statement starting at line 6
+WARNING:dotenv.main:Python-dotenv could not parse statement starting at line 7
+ERROR:config:❌ ОШИБКА: TELEGRAM_TOKEN не установлен или содержит значение по умолчанию в .env!
+WARNING:config:⚠️ ПРЕДУПРЕЖДЕНИЕ: OPENWEATHER_KEY не установлен. Функции погоды не будут работать.
+ERROR:__main__:TELEGRAM_TOKEN is missing. Please set it in .env file.
