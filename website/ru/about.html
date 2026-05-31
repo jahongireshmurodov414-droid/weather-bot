@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании - Ихтиер МЧЖ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A27',
+                        secondary: '#F57C00',
+                        accent: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-leaf mr-2 text-secondary"></i>
+                Ихтиер МЧЖ
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-primary transition">Главная</a>
+                <a href="about.html" class="hover:text-primary transition font-semibold text-primary">О компании</a>
+                <a href="products.html" class="hover:text-primary transition">Продукция</a>
+                <a href="gallery.html" class="hover:text-primary transition">Галерея</a>
+                <a href="contact.html" class="hover:text-primary transition">Контакты</a>
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                    <a href="../ru/about.html" class="px-2 py-1 rounded bg-white shadow-sm text-xs font-bold">RU</a>
+                    <a href="../uz/about.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">UZ</a>
+                    <a href="../en/about.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">EN</a>
+                </div>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="flex flex-col p-4 space-y-4">
+                <a href="index.html">Главная</a>
+                <a href="about.html" class="font-bold text-primary">О компании</a>
+                <a href="products.html">Продукция</a>
+                <a href="gallery.html">Галерея</a>
+                <a href="contact.html">Контакты</a>
+                <div class="flex space-x-4 border-t pt-4">
+                    <a href="../ru/about.html" class="font-bold">RU</a>
+                    <a href="../uz/about.html">UZ</a>
+                    <a href="../en/about.html">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">О нашей компании</h1>
+            <p class="text-xl text-green-100">История, миссия и ценности «Ихтиер МЧЖ»</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8">Более 10 лет опыта в сельском хозяйстве</h2>
+                <div class="prose prose-lg text-gray-600 space-y-6">
+                    <p>Компания «Ихтиер МЧЖ», расположенная в живописном городе Чирчик, является одним из ведущих производителей сельскохозяйственной продукции в регионе. Наша история началась с небольшого семейного участка, который благодаря упорному труду и внедрению современных технологий вырос в крупное агропромышленное предприятие.</p>
+
+                    <p>Мы специализируемся на круглогодичном выращивании свежих овощей, используя как открытый грунт, так и высокотехнологичные теплицы. Наша продукция — это результат гармоничного сочетания традиционных методов земледелия и инновационных решений в области агрономии.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+                        <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-primary">
+                            <h4 class="text-primary font-bold text-xl mb-2">Наша миссия</h4>
+                            <p>Обеспечивать жителей и предприятия Узбекистана экологически чистыми, свежими и доступными овощами высокого качества.</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-secondary">
+                            <h4 class="text-secondary font-bold text-xl mb-2">Наше видение</h4>
+                            <p>Стать эталоном качества в сельскохозяйственном секторе страны, внедряя «умные» технологии и заботясь о природе.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-900 mt-12 mb-4">Наши ценности</h3>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li><strong>Качество прежде всего:</strong> Мы не идем на компромиссы, когда речь идет о здоровье наших потребителей.</li>
+                        <li><strong>Честность и прозрачность:</strong> Мы строим долгосрочные отношения с партнерами на основе доверия.</li>
+                        <li><strong>Инновации:</strong> Мы постоянно изучаем и внедряем лучшие мировые практики выращивания овощей.</li>
+                        <li><strong>Ответственность:</strong> Мы бережно относимся к земельным ресурсам и водным богатствам нашего региона.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
+                    <div class="text-gray-500 font-medium">Гектаров полей</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">1000т+</div>
+                    <div class="text-gray-500 font-medium">Урожая в год</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">100+</div>
+                    <div class="text-gray-500 font-medium">Постоянных партнеров</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
+                    <div class="text-gray-500 font-medium">Контроль качества</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index) -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="index.html" class="text-2xl font-bold text-white flex items-center mb-6">
+                        <i class="fas fa-leaf mr-2 text-secondary"></i>
+                        Ихтиер МЧЖ
+                    </a>
+                    <p class="text-gray-400">Современное сельское хозяйство в Узбекистане. Свежесть в каждой доставке.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Навигация</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Главная</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">О компании</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Продукция</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Контакты</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Контакты</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-secondary"></i>
+                            <span>г. Чирчик, Узбекистан</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-secondary"></i>
+                            <span>+998 90 960 99 12</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Будьте в курсе</h5>
+                    <form class="flex">
+                        <input type="email" placeholder="Ваш Email" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg w-full focus:outline-none border border-gray-700">
+                        <button class="bg-primary hover:bg-green-800 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:row justify-between items-center text-gray-500 text-sm">
+                <p>© 2024 Ихтиер МЧЖ. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/998909609912" class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 hover:scale-110 transition duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+<script src="../assets/js/main.js"></script></body>
+</html>

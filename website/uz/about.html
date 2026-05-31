@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kompaniya haqida - Ixhtiyor MCHJ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A27',
+                        secondary: '#F57C00',
+                        accent: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-leaf mr-2 text-secondary"></i>
+                Ixhtiyor MCHJ
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-primary transition">Asosiy</a>
+                <a href="about.html" class="hover:text-primary transition font-semibold text-primary">Kompaniya haqida</a>
+                <a href="products.html" class="hover:text-primary transition">Mahsulotlar</a>
+                <a href="gallery.html" class="hover:text-primary transition">Galereya</a>
+                <a href="contact.html" class="hover:text-primary transition">Kontaktlar</a>
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                    <a href="../ru/about.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">RU</a>
+                    <a href="../uz/about.html" class="px-2 py-1 rounded bg-white shadow-sm text-xs font-bold">UZ</a>
+                    <a href="../en/about.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">EN</a>
+                </div>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="flex flex-col p-4 space-y-4">
+                <a href="index.html">Asosiy</a>
+                <a href="about.html" class="font-bold text-primary">Kompaniya haqida</a>
+                <a href="products.html">Mahsulotlar</a>
+                <a href="gallery.html">Galereya</a>
+                <a href="contact.html">Kontaktlar</a>
+                <div class="flex space-x-4 border-t pt-4">
+                    <a href="../ru/about.html">RU</a>
+                    <a href="../uz/about.html" class="font-bold">UZ</a>
+                    <a href="../en/about.html">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Kompaniyamiz haqida</h1>
+            <p class="text-xl text-green-100">«Ixhtiyor MCHJ» tarixi, missiyasi va qadriyatlari</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8">Qishloq xo'jaligida 10 yildan ortiq tajriba</h2>
+                <div class="prose prose-lg text-gray-600 space-y-6">
+                    <p>Go'zal Chirchiq shahrida joylashgan «Ixhtiyor MCHJ» kompaniyasi mintaqadagi yetakchi qishloq xo'jaligi mahsulotlari ishlab chiqaruvchilardan biri hisoblanadi. Bizning tariximiz kichik oilaviy uchastkadan boshlangan bo'lib, tinimsiz mehnat va zamonaviy texnologiyalarni joriy etish natijasida u yirik agrosanoat korxonasiga aylandi.</p>
+
+                    <p>Biz ochiq maydonlarda va yuqori texnologiyali issiqxonalarda yil davomida yangi sabzavotlarni yetishtirishga ixtisoslashganmiz. Mahsulotlarimiz an'anaviy dehqonchilik usullari va agronomiya sohasidagi innovatsion yechimlarning uyg'un kombinatsiyasi natijasidir.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+                        <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-primary">
+                            <h4 class="text-primary font-bold text-xl mb-2">Bizning missiyamiz</h4>
+                            <p>O'zbekiston aholisi va korxonalarini ekologik toza, yangi va hamyonbop yuqori sifatli sabzavotlar bilan ta'minlash.</p>
+                        </div>
+                        <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-secondary">
+                            <h4 class="text-secondary font-bold text-xl mb-2">Bizning maqsadimiz</h4>
+                            <p>Mamlakatimiz qishloq xo'jaligi sohasida «aqlli» texnologiyalarni joriy etgan holda va tabiatga g'amxo'rlik qilib, sifat mezoniga aylanish.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
+                    <div class="text-gray-500 font-medium">Gektar maydonlar</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">1000t+</div>
+                    <div class="text-gray-500 font-medium">Yillik hosil</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">100+</div>
+                    <div class="text-gray-500 font-medium">Doimiy hamkorlar</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
+                    <div class="text-gray-500 font-medium">Sifat nazorati</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p>© 2024 Ixhtiyor MCHJ. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+<script src="../assets/js/main.js"></script></body>
+</html>

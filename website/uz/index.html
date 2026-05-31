@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ixhtiyor MCHJ - Fermadan to'g'ridan-to'g'ri yangi sabzavotlar</title>
+    <meta name="description" content="Chirchiqdan O'zbekiston bo'ylab yetkazib beriladigan sifatli qishloq xo'jaligi mahsulotlari. Pomidor, bodring, karam, bolgar qalampiri.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A27',
+                        secondary: '#F57C00',
+                        accent: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-leaf mr-2 text-secondary"></i>
+                Ixhtiyor MCHJ
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-primary transition font-semibold text-primary">Asosiy</a>
+                <a href="about.html" class="hover:text-primary transition">Kompaniya haqida</a>
+                <a href="products.html" class="hover:text-primary transition">Mahsulotlar</a>
+                <a href="gallery.html" class="hover:text-primary transition">Galereya</a>
+                <a href="contact.html" class="hover:text-primary transition">Kontaktlar</a>
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                    <a href="../ru/index.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">RU</a>
+                    <a href="../uz/index.html" class="px-2 py-1 rounded bg-white shadow-sm text-xs font-bold">UZ</a>
+                    <a href="../en/index.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">EN</a>
+                </div>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="flex flex-col p-4 space-y-4">
+                <a href="index.html" class="font-bold text-primary">Asosiy</a>
+                <a href="about.html">Kompaniya haqida</a>
+                <a href="products.html">Mahsulotlar</a>
+                <a href="gallery.html">Galereya</a>
+                <a href="contact.html">Kontaktlar</a>
+                <div class="flex space-x-4 border-t pt-4">
+                    <a href="../ru/index.html">RU</a>
+                    <a href="../uz/index.html" class="font-bold">UZ</a>
+                    <a href="../en/index.html">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[80vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Farm field" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10 text-white">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">Yangi sabzavotlar <br><span class="text-secondary">to'g'ridan-to'g'ri fermadan</span></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl">Chirchiqdan O'zbekiston bo'ylab yetkazib beriladigan sifatli qishloq xo'jaligi mahsulotlari</p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="products.html" class="bg-secondary hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-bold transition text-center">Mahsulot buyurtma qilish</a>
+                <a href="contact.html" class="bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-full text-lg font-bold transition text-center">Biz bilan bog'lanish</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="About us" class="rounded-2xl shadow-2xl">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-primary text-sm font-bold uppercase tracking-widest mb-4">Kompaniya haqida</h2>
+                <h3 class="text-4xl font-bold mb-6">Qishloq xo'jaligidagi ishonchli hamkoringiz</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">«Ixhtiyor MCHJ» kompaniyasi yangi sabzavotlarni yetishtirish va yetkazib berish bilan shug'ullanadi. Biz mahsulot sifatini, yangiligini hamda biznes va xususiy mijozlar uchun ishonchli yetkazib berishni kafolatlaymiz.</p>
+                <a href="about.html" class="text-primary font-bold flex items-center hover:text-secondary transition">
+                    Batafsil ma'lumot <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-primary text-sm font-bold uppercase tracking-widest mb-4">Mahsulotlarimiz</h2>
+            <h3 class="text-4xl font-bold mb-12">Biz nimalar yetishtiramiz</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546473427-e1ad70228391?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Pomidor" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Pomidor</h4>
+                        <p class="text-gray-500 mb-4 text-sm">Sershira va xushbo'y yuqori sifatli pomidorlar.</p>
+                        <a href="products.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-800 transition">Narxini bilish</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1449333255014-a93fd526353e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Bodring" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Bodring</h4>
+                        <p class="text-gray-500 mb-4 text-sm">To'g'ridan-to'g'ri egatdan uzilgan karsildoq bodringlar.</p>
+                        <a href="products.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-800 transition">Narxini bilish</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1591584281142-4a7b97eaaad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Karam" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Karam</h4>
+                        <p class="text-gray-500 mb-4 text-sm">Taomlaringiz uchun qattiq va yangi karam.</p>
+                        <a href="products.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-800 transition">Narxini bilish</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:-translate-y-2 transition duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563513307166-419fe0e784a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Bolgar qalampiri" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Bolgar qalampiri</h4>
+                        <p class="text-gray-500 mb-4 text-sm">Rang-barang va shirin bolgar qalampiri.</p>
+                        <a href="products.html" class="inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-green-800 transition">Narxini bilish</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-primary text-sm font-bold uppercase tracking-widest mb-4 text-center">Afzalliklar</h2>
+            <h3 class="text-4xl font-bold mb-16 text-center">Nima uchun bizni tanlashadi</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 text-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Har kuni yangi hosil</h4>
+                    <p class="text-gray-500">Mahsulotlarni har kuni ertalab yig'amiz, shunda siz faqat eng yangisini olasiz.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 text-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Ekologik toza mahsulot</h4>
+                    <p class="text-gray-500">Zararli kimyoviy moddalarsiz, faqat xavfsiz yetishtirish usullaridan foydalanamiz.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 text-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Ulgurji yetkazib berish</h4>
+                    <p class="text-gray-500">Do'konlar va restoranlar uchun katta hajmdagi mahsulotlarga ixtisoslashganmiz.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 text-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Tezkor yetkazib berish</h4>
+                    <p class="text-gray-500">O'zbekiston bo'ylab o'z logistikamiz orqali qisqa muddatlarda yetkazib beramiz.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 text-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Ishonchli sifat</h4>
+                    <p class="text-gray-500">Urug'dan to qadoqlashgacha bo'lgan har bir bosqichda qat'iy sifat nazorati.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-100 text-primary rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Hamyonbop narxlar</h4>
+                    <p class="text-gray-500">Vositachilarsiz va ortiqcha ustamalarsiz to'g'ridan-to'g'ri ishlab chiqaruvchidan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="index.html" class="text-2xl font-bold text-white flex items-center mb-6">
+                        <i class="fas fa-leaf mr-2 text-secondary"></i>
+                        Ixhtiyor MCHJ
+                    </a>
+                    <p class="text-gray-400">O'zbekistonda zamonaviy qishloq xo'jaligi. Har bir yetkazib berishda yangilik.</p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Navigatsiya</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition">Asosiy</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">Kompaniya haqida</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Mahsulotlar</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Kontaktlar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Kontaktlar</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-secondary"></i>
+                            <span>Chirchiq sh., O'zbekiston</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-secondary"></i>
+                            <span>+998 90 960 99 12</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-3 text-secondary"></i>
+                            <span>+998 90 960 99 12</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Xabardor bo'ling</h5>
+                    <form class="flex">
+                        <input type="email" placeholder="Emailingiz" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg w-full focus:outline-none border border-gray-700">
+                        <button class="bg-primary hover:bg-green-800 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2024 Ixhtiyor MCHJ. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/998909609912" class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 hover:scale-110 transition duration-300">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+<script src="../assets/js/main.js"></script></body>
+</html>

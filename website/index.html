@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikhtiyor MCHJ - Redirecting...</title>
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('uz')) {
+            window.location.href = './uz/index.html';
+        } else if (userLang.startsWith('en')) {
+            window.location.href = './en/index.html';
+        } else {
+            window.location.href = './ru/index.html';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting to the appropriate language version... / Перенаправление на нужную языковую версию...</p>
+</body>
+</html>
