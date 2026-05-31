@@ -1,0 +1,10 @@
+127.0.0.1 - - [31/May/2026 06:44:36] "GET /ru/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:44:37] "GET /assets/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:44:39] "GET /uz/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:44:41] "GET /uz/products.html HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:44:42] "GET /uz/contact.html HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:46:45] "GET /ru/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:46:45] "GET /assets/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:46:47] "GET /uz/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:46:49] "GET /uz/products.html HTTP/1.1" 200 -
+127.0.0.1 - - [31/May/2026 06:46:50] "GET /uz/contact.html HTTP/1.1" 200 -

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ikhtiyor LLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A27',
+                        secondary: '#F57C00',
+                        accent: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-leaf mr-2 text-secondary"></i>
+                Ikhtiyor LLC
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-primary transition">Home</a>
+                <a href="about.html" class="hover:text-primary transition">About</a>
+                <a href="products.html" class="hover:text-primary transition">Products</a>
+                <a href="gallery.html" class="hover:text-primary transition">Gallery</a>
+                <a href="contact.html" class="hover:text-primary transition font-semibold text-primary">Contacts</a>
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                    <a href="../ru/contact.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">RU</a>
+                    <a href="../uz/contact.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">UZ</a>
+                    <a href="../en/contact.html" class="px-2 py-1 rounded bg-white shadow-sm text-xs font-bold">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="text-xl text-green-100">We are always open for cooperation and your questions</p>
+        </div>
+    </header>
+
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Contact Information</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-100 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Our Address</h4>
+                                <p class="text-gray-600">Chirchik, Tashkent Region, Uzbekistan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-100 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Phone</h4>
+                                <p class="text-gray-600">+998 90 960 99 12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Online Order</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold mb-2">Your Name</label>
+                            <input id="name" type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-bold mb-2">Phone Number</label>
+                            <input id="phone" type="tel" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <button type="submit" class="w-full bg-secondary text-white py-4 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg">Submit Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p>© 2024 Ikhtiyor LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your request has been received. We will contact you shortly.');
+            this.reset();
+        });
+    </script>
+<script src="../assets/js/main.js"></script></body>
+</html>

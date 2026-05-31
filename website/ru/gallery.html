@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Ихтиер МЧЖ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A27',
+                        secondary: '#F57C00',
+                        accent: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-leaf mr-2 text-secondary"></i>
+                Ихтиер МЧЖ
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-primary transition">Главная</a>
+                <a href="about.html" class="hover:text-primary transition">О компании</a>
+                <a href="products.html" class="hover:text-primary transition">Продукция</a>
+                <a href="gallery.html" class="hover:text-primary transition font-semibold text-primary">Галерея</a>
+                <a href="contact.html" class="hover:text-primary transition">Контакты</a>
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                    <a href="../ru/gallery.html" class="px-2 py-1 rounded bg-white shadow-sm text-xs font-bold">RU</a>
+                    <a href="../uz/gallery.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">UZ</a>
+                    <a href="../en/gallery.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">EN</a>
+                </div>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="bg-primary py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Галерея</h1>
+            <p class="text-xl text-green-100">Наши поля, теплицы и процесс выращивания</p>
+        </div>
+    </header>
+
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Gallery items -->
+                <div class="h-80 rounded-2xl overflow-hidden shadow-lg group relative">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Поля" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">Наши поля</span>
+                    </div>
+                </div>
+                <div class="h-80 rounded-2xl overflow-hidden shadow-lg group relative">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Теплицы" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">Теплицы</span>
+                    </div>
+                </div>
+                <div class="h-80 rounded-2xl overflow-hidden shadow-lg group relative">
+                    <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Урожай" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">Свежий урожай</span>
+                    </div>
+                </div>
+                <div class="h-80 rounded-2xl overflow-hidden shadow-lg group relative">
+                    <img src="https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Процесс" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">Процесс выращивания</span>
+                    </div>
+                </div>
+                <div class="h-80 rounded-2xl overflow-hidden shadow-lg group relative">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Упаковка" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">Упаковка</span>
+                    </div>
+                </div>
+                <div class="h-80 rounded-2xl overflow-hidden shadow-lg group relative">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Доставка" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">Доставка</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p>© 2024 Ихтиер МЧЖ. Все права защищены.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+<script src="../assets/js/main.js"></script></body>
+</html>

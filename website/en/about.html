@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ikhtiyor LLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A27',
+                        secondary: '#F57C00',
+                        accent: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-leaf mr-2 text-secondary"></i>
+                Ikhtiyor LLC
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-primary transition">Home</a>
+                <a href="about.html" class="hover:text-primary transition font-semibold text-primary">About</a>
+                <a href="products.html" class="hover:text-primary transition">Products</a>
+                <a href="gallery.html" class="hover:text-primary transition">Gallery</a>
+                <a href="contact.html" class="hover:text-primary transition">Contacts</a>
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                    <a href="../ru/about.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">RU</a>
+                    <a href="../uz/about.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">UZ</a>
+                    <a href="../en/about.html" class="px-2 py-1 rounded bg-white shadow-sm text-xs font-bold">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About Our Company</h1>
+            <p class="text-xl text-green-100">History, mission, and values of Ikhtiyor LLC</p>
+        </div>
+    </header>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8">Over 10 years of experience in agriculture</h2>
+            <div class="prose prose-lg text-gray-600 space-y-6">
+                <p>Located in the picturesque city of Chirchik, Ikhtiyor LLC is one of the leading producers of agricultural products in the region. Our history began with a small family plot, which through hard work and the introduction of modern technologies has grown into a large agro-industrial enterprise.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+                    <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-primary">
+                        <h4 class="text-primary font-bold text-xl mb-2">Our Mission</h4>
+                        <p>To provide the residents and businesses of Uzbekistan with eco-friendly, fresh, and affordable high-quality vegetables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p>© 2024 Ikhtiyor LLC. All rights reserved.</p>
+    </footer>
+<script src="../assets/js/main.js"></script></body>
+</html>

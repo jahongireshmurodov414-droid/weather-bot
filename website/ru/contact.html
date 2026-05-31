@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Ихтиер МЧЖ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D5A27',
+                        secondary: '#F57C00',
+                        accent: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fas fa-leaf mr-2 text-secondary"></i>
+                Ихтиер МЧЖ
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-primary transition">Главная</a>
+                <a href="about.html" class="hover:text-primary transition">О компании</a>
+                <a href="products.html" class="hover:text-primary transition">Продукция</a>
+                <a href="gallery.html" class="hover:text-primary transition">Галерея</a>
+                <a href="contact.html" class="hover:text-primary transition font-semibold text-primary">Контакты</a>
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+                    <a href="../ru/contact.html" class="px-2 py-1 rounded bg-white shadow-sm text-xs font-bold">RU</a>
+                    <a href="../uz/contact.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">UZ</a>
+                    <a href="../en/contact.html" class="px-2 py-1 rounded hover:bg-white transition text-xs font-bold">EN</a>
+                </div>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="bg-primary py-20 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Свяжитесь с нами</h1>
+            <p class="text-xl text-green-100">Мы всегда рады сотрудничеству и вашим вопросам</p>
+        </div>
+    </header>
+
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Контактная информация</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-100 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Наш адрес</h4>
+                                <p class="text-gray-600">г. Чирчик, Ташкентская область, Узбекистан</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-100 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Телефон</h4>
+                                <p class="text-gray-600">+998 90 960 99 12</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-100 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">WhatsApp</h4>
+                                <p class="text-gray-600">+998 90 960 99 12</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-100 text-primary rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p class="text-gray-600">info@ikhtiyor.uz</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 h-80 rounded-2xl overflow-hidden shadow-lg">
+                        <!-- Simplified map embed for Chirchik -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47856.78453415771!2d69.54924744431153!3d41.465223326702674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38af9f68853b016d%3A0xc07a2164c004733e!2sChirchiq%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1715850000000!5m2!1sen!2s"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-6">Онлайн-заказ</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold mb-2">Ваше имя</label>
+                            <input id="name" type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-bold mb-2">Номер телефона</label>
+                            <input id="phone" type="tel" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Что вас интересует?</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Помидоры</option>
+                                <option>Огурцы</option>
+                                <option>Капуста</option>
+                                <option>Болгарский перец</option>
+                                <option>Другое / Оптовые поставки</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Сообщение</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-secondary text-white py-4 rounded-xl font-bold hover:bg-orange-600 transition shadow-lg">Отправить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 text-center">
+        <p>© 2024 Ихтиер МЧЖ. Все права защищены.</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
+<script src="../assets/js/main.js"></script></body>
+</html>
